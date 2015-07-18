@@ -1,0 +1,76 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+
+Example:
+
+
+
+@group Wid
+@element wid-footer
+@demo demo/index.html
+-->
+<dom-module id="wid-footer">
+  <style>
+
+    :host {
+      display: block;
+      background-color: var(--wid-footer-background-color, #383F4F);
+      color: var(--wid-footer-color, white);
+      padding: var(--wid-footer-padding, 15px);
+
+      @apply(--layout-vertical);
+      @apply(--layout-center-center);
+    }
+
+    :host ::content iron-image[left] {
+      width: 120px;
+      height: 80px;
+    }
+
+    :host ::content p[left] {
+      margin: 0;
+    }
+
+    :host ::content hr[right] {
+      width: 100%;
+    }
+
+    :host ::content p[right] {
+      text-align: center;
+    }
+
+    #container div {
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+  </style>
+  <template>
+
+    <div id="container" class="layout horizontal center-center">
+
+      <div class="logo layout vertical center-center">
+
+        <content select="[left]"></content>
+
+      </div>
+
+      <div class="layout vertical center-center">
+
+        <content select="[right]"></content>
+
+      </div>
+
+    </div>
+
+  </template>
+</dom-module>
+
+<script>
+(function() {
+  Polymer({
+    is: 'wid-footer'
+  });
+})();
+</script>
